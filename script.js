@@ -1,8 +1,12 @@
+const nome = document.querySelector('#nome')
+const email = document.querySelector('#email')
 const end = document.querySelector('#endereco')
 const bairro = document.querySelector('#bairro')
 const estado = document.querySelector('#estado')
 const cidade = document.querySelector('#cidade')
 const cep = document.querySelector('#cep')
+const numero = document.querySelector('#numero')
+const botao = document.getElementById('#botao')
 
 function preencherCampos(endereco){
     end.value = endereco.logradouro
@@ -32,4 +36,23 @@ function buscarEndereco() {
         end.value = 'Cep Invalido!!'
     }
 }
+
+function salvarDados(){
+    const valor = {
+        nome: nome.value,
+        email: email.value,
+        cep: cep.value,
+        end: end.value,
+        bairro: bairro.value,
+        estado: estado.value,
+        cidade: cidade.value,
+        numero: numero.value
+    }
+    valor_json = JSON.stringify(valor)
+
+    localStorage.setItem('meuCep', valor_json)
+    alert('Dados Salvos!')
+}
+
+botao.addEventListener('click', salvarDados)
 cep.addEventListener('blur', buscarEndereco)
