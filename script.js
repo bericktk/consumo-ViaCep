@@ -8,6 +8,8 @@ const cep = document.querySelector('#cep')
 const numero = document.querySelector('#numero')
 const botao = document.getElementById('botao')
 
+let valores = localStorage.getItem(valor_json) || ('')
+
 function preencherCampos(endereco){
     end.value = endereco.logradouro
     bairro.value = endereco.bairro
