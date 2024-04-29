@@ -6,7 +6,7 @@ const estado = document.querySelector('#estado')
 const cidade = document.querySelector('#cidade')
 const cep = document.querySelector('#cep')
 const numero = document.querySelector('#numero')
-const botao = document.getElementById('#botao')
+const botao = document.getElementById('botao')
 
 function preencherCampos(endereco){
     end.value = endereco.logradouro
